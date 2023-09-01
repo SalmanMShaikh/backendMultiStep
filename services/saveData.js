@@ -9,7 +9,8 @@ const saveFormData = async(req, res) =>{
       });
 try{
     let params = await schema.validateAsync(req.body);
-    await formDataCollection.insertOne(params)
+   let result = await formDataCollection.insertOne(params)
+  
     return res.status(200).json({status:200, message: 'success'})
 
 }catch(err){

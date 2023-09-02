@@ -6,7 +6,7 @@ const saveFormData = async(req, res) =>{
         name: Joi.string().regex(/[A-Za-z_]/).max(120).required(),
         email: Joi.string().regex(/\S+@\S+\.\S+/).max(240).required(),
         phone: Joi.string().regex(/^\+\d{1,}$/).max(12).required(),
-        isYearly: Joi.boolean().required(),
+        isYearly: Joi.boolean().optional(),
         planType: Joi.string().max(50).required(),
         options: Joi.array().optional(),
         totalPrice: Joi.number().required()
